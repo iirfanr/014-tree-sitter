@@ -4,7 +4,7 @@ from tree_sitter import Language, Parser
 parser = Parser(Language(tspython.language()))
 
 potongan = {
-    "fungsi": b'def sapa(nama):\n    return "Halo " + nama\n',
+    "fungsi": b'def sapa(nama):\n    return "Halo  + nama\n',
     "if_else": b'x = 5\nif x > 3:\n    print("besar")\nelse:\n    print("kecil")\n',
     "kelas": b'class Mahasiswa:\n    def perkenalan(self):\n        return "Saya mahasiswa"\n',
 }
