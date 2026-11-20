@@ -12,8 +12,14 @@ export default grammar({
   extras: $ => [/\s/],
   rules: {
     query: $ => $.comparison,
-    comparison: $ => seq($.identifier, $.operator, $.string),
+    comparison: $ => seq(
+      $.identifier,
+      choice('=', '!=', '>', '<', '>=', '<='),
+      $._value,
+    ),
+    _value: $ => choice($.string, $.number),
     identifier: $ => /[a-zA-Z_][a-zA-Z0-9_.]*/,
     string: $ => /"[^"]*"/,
+    number: $ => /\d+(\.\d+)?/,
   }
 });
