@@ -1,1 +1,1 @@
-status = "open" or priority > 2 and owner = "budi"
+status in ("open", "pending", "closed")
