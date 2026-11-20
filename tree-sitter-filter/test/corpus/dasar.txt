@@ -6,3 +6,4 @@ a = 1 or b = 2 and c = 3
 not archived = true
 status = "open" or priority > 2 and owner = "budi"
 status in ("open", "pending", "closed")
+status in ("open", "pending") and not archived = true or (priority >= 2.5 and title contains "invoice")
